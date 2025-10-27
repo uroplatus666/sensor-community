@@ -40,9 +40,13 @@ git clone https://github.com/uroplatus666/sensor-community.git
 - `load_frost.py`
 вставьте нужные sensor-id и диапазоны дат:
 `sensor_ids = {
-    "sensor_id": {"start_date": "year-month-day", "end_date": "year-month-day"},
+    "sensor_id":
+       {
+    "start_date": "year-month-day", "end_date": "year-month-day"
+       },
     ...
 }`
+
 1.2. В файле `process.py` вставьте свой `MAPBOX_TOKEN` для геокодирования координат
   
 1.3. В файле `load_frost.py` вставьте свой 'BASE_URL' - адрес FrostServer или поднимите его локально, для этого откройте новый терминал в дириктории `FrostServer`:
