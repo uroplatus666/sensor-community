@@ -33,6 +33,7 @@
 git clone https://github.com/uroplatus666/sensor-community.git
 ```
 1. Ввод своих данных
+
 1.1. В файлах:
 - `sds_scrape.py`
 - `bme_scrape.py`
@@ -43,6 +44,7 @@ git clone https://github.com/uroplatus666/sensor-community.git
     ...
 }`
 1.2. В файле `process.py` вставьте свой `MAPBOX_TOKEN` для геокодирования координат
+  
 1.3. В файле `load_frost.py` вставьте свой 'BASE_URL' - адрес FrostServer или поднимите его локально, для этого откройте новый терминал в дириктории `FrostServer`:
 ```bash
 wsl
