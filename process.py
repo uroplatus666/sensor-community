@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Optional, Tuple, Dict, List
 
 # Ключи
-MAPBOX_TOKEN = "pk.eyJ1IjoidXJvcGxhdHVzMTkiLCJhIjoiY21kM2l5cHh4MDV0dDJrczlxbGZ1ZTBjNiJ9.NGVB6RgSU6gMg2IKvT35ZQ" # ← ВАШ токен
+MAPBOX_TOKEN = "YOUR_TOKEN" # ← ВАШ токен
 
 #______________________Вывод статистика по скаченным данным_____________________
 
@@ -349,5 +349,6 @@ d12['sensor_id'] = norm_id_to_int(d12['sensor_id'])
 
 all_stats= pd.merge(df, d12, how = 'left', on = 'sensor_id')
 all_stats.to_excel('all_stats.xlsx', index = False)
+
 
 
