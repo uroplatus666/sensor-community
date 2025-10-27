@@ -1,13 +1,13 @@
-# Парсинг данных сенсоров с `https://archive.sensor.community/` и загрузка на FrostServer
+## Парсинг данных сенсоров с `https://archive.sensor.community/` и загрузка на FrostServer
 
 
 ```
 .
-├── sds_scrape.py      # Переменные окружения
-├── bme_scrape.py      # Исключения для Docker
-├── process.py         # Исключения для Git
-├── load_frost.py      # Docker Compose со сборкой и прокидыванием окружения
-├── descriptions.xlsx  # Метаданные и зависимости
+├── sds_scrape.py      # Парсинг данных SDS011 (пыль)
+├── bme_scrape.py      # Парсинг данных BME280 (температура, давление, влажность)
+├── process.py         # Обработка и агрегирование
+├── load_frost.py      # Загрузка данных на FrostServer
+├── descriptions.xlsx  # Исходные известные арактеристики датчиков
 ├── FrostServer
 │ └── compose.yml      # Образ для создания локального FrostServer
 ├── example            # Дириктория-пример для загрузки уже выгруженных данных на FrostServer
@@ -16,7 +16,8 @@
 | │ │ └── 82312        # Папка с csv файлами для данного sensor-id
 | │ └── BME280         # Папка с файлами сенсора типа BME280
 | │    └── 82313       # Папка с csv файлами для данного sensor-id
-│ └── all_stats.xlsx
+| ├── load_frost.py    # Загрузка данных на FrostServer
+│ └── all_stats.xlsx   # Агрегированные характеристики датчиков, их локаций и т.д.
 └── README.md          # Вы читаете этот файл
 ```
 sensor_ids = {
@@ -28,7 +29,7 @@ sensor_ids = {
 ```bash
 git clone https://github.com/uroplatus666/sensor-community.git
 ```
-1.
+1. Ввод своих данных
 1.1. В файлах:
 - `sds_scrape.py`
 - `bme_scrape.py`
@@ -50,7 +51,7 @@ docker-compose up -d
 ```bash
 python -m venv venv
 venv\Scripts\Activate.ps1
-pip install requests pandas
+pip install requests pandas openpyxl
 ```
 - Парсим данные с пылевых датчиков SDS011
 ```bash
@@ -80,6 +81,16 @@ python process.py
 ```
 4. Выгружаем данные на FrostServer
 ```bash
+python frost_load.py
+```
+
+#### BONUS
+Загрузка тестовых данных на FrostServer без скачивания
+```bash
+cd example
+python -m venv venv
+venv\Scripts\Activate.ps1
+pip install requests pandas openpyxl
 python frost_load.py
 ```
 #### Если вы запускали локальный FrostServer и вам требуется:
