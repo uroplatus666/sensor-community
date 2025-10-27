@@ -20,13 +20,13 @@
 │ └── all_stats.xlsx   # Агрегированные характеристики датчиков, их локаций и т.д.
 └── README.md          # Вы читаете этот файл
 ```
-sensor_ids = {
+`sensor_ids = {
     "sensor_id":
         {
         "start_date": "year-month-day", "end_date": "year-month-day"
         },
     ...
-}
+}`
 ### Запуск сервиса
 0. Клонируйте репозиторий
 ```bash
