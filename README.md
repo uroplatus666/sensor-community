@@ -21,7 +21,10 @@
 └── README.md          # Вы читаете этот файл
 ```
 sensor_ids = {
-    "sensor_id": {"start_date": "year-month-day", "end_date": "year-month-day"},
+    "sensor_id":
+        {
+        "start_date": "year-month-day", "end_date": "year-month-day"
+        },
     ...
 }
 ### Запуск сервиса
