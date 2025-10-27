@@ -119,7 +119,7 @@ def create_observed_properties(dry_run=False):
     obs_props = [
         {"name": "Относительная влажность воздуха", "description": "Relative humidity in percent", "definition": "http://dbpedia.org/page/Humidity"},
         {"name": "Температура воздуха", "description": "Air temperature in Celsius", "definition": "http://dbpedia.org/page/Temperature"},
-        {"name": "Атмосферное давление", "description": "Atmospheric pressure in hPa", "definition": "http://dbpedia.org/page/Atmospheric_pressure"},
+        {"name": "Атмосферное давление", "description": "Atmospheric pressure in Pa", "definition": "http://dbpedia.org/page/Atmospheric_pressure"},
         {"name": "PM2.5", "description": "Concentration of particulate matter with diameter up to 2.5 micrometers in µg/m³", "definition": "http://dbpedia.org/page/Particulates"},
         {"name": "PM10", "description": "Concentration of particulate matter with diameter up to 10 micrometers in µg/m³", "definition": "http://dbpedia.org/page/Particulates"},
     ]
@@ -183,7 +183,7 @@ def process_group(group, obs_prop_ids, dry_run=False):
 
     bme_sensor_data = {
         "name": f"BME280_{inv}",
-        "description": "Sensor for measuring temperature in °C, relative humidity in % and atmospheric pressure in hPa",
+        "description": "Sensor for measuring temperature in °C, relative humidity in % and atmospheric pressure in Pa",
         "encodingType": "application/pdf",
         "metadata": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf"
     }
@@ -318,11 +318,11 @@ def process_group(group, obs_prop_ids, dry_run=False):
         },
         {
             "name": f"Pressure_{inv}",
-            "description": "Atmospheric pressure in hPa",
+            "description": "Atmospheric pressure in Pa",
             "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
             "unitOfMeasurement": {
                 "name": "hectopascal",
-                "symbol": "hPa",
+                "symbol": "Pa",
                 "definition": "http://www.qudt.org/qudt/owl/1.0.0/unit/Instances.html#Hectopascal"
             },
             "Thing": {"@iot.id": thing_id},
