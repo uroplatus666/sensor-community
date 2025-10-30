@@ -12,7 +12,7 @@ sensor_ids = {
     "82344": {"start_date": "2023-08-24", "end_date": "2025-10-20"},
     "81967": {"start_date": "2024-07-07", "end_date": "2025-10-20"},
 }
-result_directory = "data"
+result_directory = "data/SDS011"
 log_file = "log.txt"
 need_log = True
 target_host = "https://archive.sensor.community/"
@@ -67,4 +67,5 @@ def main():
             tmp_date_dte = getNextDate(tmp_date_dte)
 
 if __name__ == '__main__':
+
     main()
