@@ -1,0 +1,12 @@
+services:
+  etl-service:
+    build: .
+    container_name: sensor_etl_worker
+    volumes:
+      - ./data_archive:/data
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # УБИРАЕМ restart: always или меняем на "no"
+    restart: "no"

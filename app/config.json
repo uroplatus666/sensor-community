@@ -1,0 +1,14 @@
+{
+    "mapbox_token": "",
+    "frost_url": "http://host.docker.internal:8080/FROST-Server/v1.1",
+    "data_dir": "/data",
+    "sensors": {
+        "sds": {
+            "82312": {"start": "2025-06-01", "end": "auto"},
+            "82328": {"start": "2025-06-01", "end": "auto"}
+        },
+        "bme": {
+            "82313": {"start": "2025-06-01", "end": "auto"}
+        }
+    }
+}
