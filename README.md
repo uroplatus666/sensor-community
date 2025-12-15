@@ -13,8 +13,8 @@ sensor-etl/
 │   ├── uploader.py         # Загрузка (Load)
 │   └── requirements.txt
 ├── data_archive/           # Папка на хосте для сохранения CSV и логов
-│   ├── SDS011/
-│   ├── BME280/
+│   ├── SDS011/             # Папка для данных сенсоров SDS011, создается автоматически
+│   ├── BME280/             # Папка для данных сенсоров BME280, создается автоматически
 │   ├── all_stats.xlsx
 │   ├── description.xlsx    # Исходный файл с описаниями датчиков
 │   └── state.json          # Состояние по выгрузкам - последняя дата загрузки для каждого датчика
@@ -146,4 +146,5 @@ docker compose up -d
 docker stop $(docker ps -q)
 docker rm $(docker ps -aq)
 ```
+
 
